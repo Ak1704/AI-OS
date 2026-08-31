@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ai-os-1/AI_OS_!/Scheduler/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

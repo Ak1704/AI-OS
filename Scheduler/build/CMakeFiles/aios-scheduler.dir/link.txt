@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/aios-scheduler.dir/link.d "CMakeFiles/aios-scheduler.dir/src/main.cpp.o" "CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o" "CMakeFiles/aios-scheduler.dir/src/policy.cpp.o" -o aios-scheduler

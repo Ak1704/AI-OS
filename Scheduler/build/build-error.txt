@@ -1,0 +1,50 @@
+Change Dir: '/home/ai-os-1/AI_OS_!/Scheduler/build'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile
+/usr/bin/cmake -S/home/ai-os-1/AI_OS_!/Scheduler -B/home/ai-os-1/AI_OS_!/Scheduler/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles /home/ai-os-1/AI_OS_!/Scheduler/build//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+/usr/bin/gmake  -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/depend
+gmake[2]: Entering directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+cd /home/ai-os-1/AI_OS_!/Scheduler/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ai-os-1/AI_OS_!/Scheduler /home/ai-os-1/AI_OS_!/Scheduler /home/ai-os-1/AI_OS_!/Scheduler/build /home/ai-os-1/AI_OS_!/Scheduler/build /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/aios-scheduler.dir/DependInfo.cmake "--color=" aios-scheduler
+Dependencies file "CMakeFiles/aios-scheduler.dir/src/main.cpp.o.d" is newer than depends file "/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/aios-scheduler.dir/compiler_depend.internal".
+Dependencies file "CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o.d" is newer than depends file "/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/aios-scheduler.dir/compiler_depend.internal".
+Consolidate compiler generated dependencies of target aios-scheduler
+gmake[2]: Leaving directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+/usr/bin/gmake  -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/build
+gmake[2]: Entering directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+[ 25%] Building CXX object CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o
+/usr/bin/c++  -I/home/ai-os-1/AI_OS_!/Scheduler/include -std=gnu++20 -MD -MT CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:5:1: error: ‘Scheduler’ does not name a type
+    5 | Scheduler::Scheduler(
+      | ^~~~~~~~~
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:12:6: error: ‘Scheduler’ has not been declared
+   12 | void Scheduler::submit(
+      |      ^~~~~~~~~
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp: In function ‘void submit(const WorkloadDescriptor&)’:
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:16:5: error: ‘workloads_’ was not declared in this scope; did you mean ‘workload’?
+   16 |     workloads_.push_back(workload);
+      |     ^~~~~~~~~~
+      |     workload
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp: At global scope:
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:19:1: error: ‘SchedulingDecision’ does not name a type
+   19 | SchedulingDecision Scheduler::schedule()
+      | ^~~~~~~~~~~~~~~~~~
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:51:1: error: ‘Scheduler’ has not been declared
+   51 | Scheduler::workloads() const
+      | ^~~~~~~~~
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:51:24: error: non-member function ‘const std::vector<WorkloadDescriptor>& workloads()’ cannot have cv-qualifier
+   51 | Scheduler::workloads() const
+      |                        ^~~~~
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp: In function ‘const std::vector<WorkloadDescriptor>& workloads()’:
+/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp:53:12: error: ‘workloads_’ was not declared in this scope; did you mean ‘workloads’?
+   53 |     return workloads_;
+      |            ^~~~~~~~~~
+      |            workloads
+gmake[2]: *** [CMakeFiles/aios-scheduler.dir/build.make:93: CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o] Error 1
+gmake[2]: Leaving directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+gmake[1]: *** [CMakeFiles/Makefile2:87: CMakeFiles/aios-scheduler.dir/all] Error 2
+gmake[1]: Leaving directory '/home/ai-os-1/AI_OS_!/Scheduler/build'
+gmake: *** [Makefile:91: all] Error 2
+
