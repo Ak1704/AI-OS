@@ -1,24 +1,32 @@
 #pragma once
 
 #include "policy.hpp"
+#include "scheduler_state.hpp"
 #include "scheduling_decision.hpp"
 #include "workload.hpp"
 
+#include <cstddef>
+#include <cstdint>
 #include <memory>
-#include <vector>
 
 class Scheduler {
 public:
-    explicit Scheduler(std::unique_ptr<SchedulingPolicy> policy);
+    Scheduler(
+        std::unique_ptr<SchedulingPolicy> policy,
+        std::size_t total_cpu_cores,
+        std::uint64_t total_memory_mb
+    );
 
-    void submit(const WorkloadDescriptor& workload);
+    void submit(
+        const WorkloadDescriptor& workload
+    );
 
     SchedulingDecision schedule();
 
-    const std::vector<WorkloadDescriptor>& workloads() const;
+    const SchedulerState& state() const;
 
 private:
-    std::vector<WorkloadDescriptor> workloads_;
+    SchedulerState state_;
 
     std::unique_ptr<SchedulingPolicy> policy_;
 };

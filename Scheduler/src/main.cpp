@@ -9,15 +9,19 @@ int main()
     auto policy =
         std::make_unique<PriorityPolicy>();
 
-    Scheduler scheduler(std::move(policy));
+    Scheduler scheduler(
+        std::move(policy),
+        4,
+        8192
+    );
 
     scheduler.submit({
         1,
         "Training",
         WorkloadType::TRAINING,
         8,
-        4,
-        8192,
+        2,
+        4096,
         WorkloadState::READY
     });
 
@@ -26,7 +30,7 @@ int main()
         "Inference",
         WorkloadType::INFERENCE,
         10,
-        2,
+        1,
         2048,
         WorkloadState::READY
     });
@@ -36,12 +40,13 @@ int main()
         "DataLoader",
         WorkloadType::DATA_LOADING,
         5,
-        2,
+        1,
         1024,
         WorkloadState::READY
     });
 
-    auto decision = scheduler.schedule();
+    auto decision =
+        scheduler.schedule();
 
     std::cout
         << "Selected workload: "
@@ -49,9 +54,42 @@ int main()
         << '\n';
 
     std::cout
-        << "Reason: "
-        << decision.reason
+        << "Action: ";
+
+    if (decision.action ==
+        SchedulingAction::RUN)
+    {
+        std::cout << "RUN\n";
+    }
+    else
+    {
+        std::cout << "WAIT\n";
+    }
+
+    std::cout
+        << "CPU cores: ";
+
+    for (int cpu :
+         decision.cpu_cores)
+    {
+        std::cout << cpu << ' ';
+    }
+
+    std::cout << '\n';
+
+    std::cout
+        << "Available CPU cores: "
+        << scheduler.state()
+               .resources()
+               .available_cpu_cores()
         << '\n';
+
+    std::cout
+        << "Available memory: "
+        << scheduler.state()
+               .resources()
+               .available_memory_mb()
+        << " MB\n";
 
     return 0;
 }
