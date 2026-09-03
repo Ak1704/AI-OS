@@ -1,0 +1,174 @@
+{
+  "tests": 30,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "ReadyQueueTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "StartsEmpty",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 14
+        },
+        {
+          "name": "CanInsertWorkload",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 28
+        },
+        {
+          "name": "PreservesInsertionOrder",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 71
+        },
+        {
+          "name": "CanRemoveWorkload",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 124
+        },
+        {
+          "name": "RemovingUnknownWorkloadDoesNothing",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 169
+        },
+        {
+          "name": "CanClearQueue",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 199
+        },
+        {
+          "name": "HandlesSingleWorkload",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_ready_queue.cpp",
+          "line": 248
+        }
+      ]
+    },
+    {
+      "name": "ResourceStateTest",
+      "tests": 11,
+      "testsuite": [
+        {
+          "name": "InitializesResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 14
+        },
+        {
+          "name": "InitializesCpuIds",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 48
+        },
+        {
+          "name": "DetectsAvailableResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 73
+        },
+        {
+          "name": "RejectsInsufficientCpu",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 102
+        },
+        {
+          "name": "RejectsInsufficientMemory",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 131
+        },
+        {
+          "name": "AllocationConsumesResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 160
+        },
+        {
+          "name": "FailedAllocationDoesNotConsumeResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 204
+        },
+        {
+          "name": "ReleaseRestoresResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 248
+        },
+        {
+          "name": "CanAllocateAllResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 304
+        },
+        {
+          "name": "CannotAllocateWhenResourcesAreExhausted",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 347
+        },
+        {
+          "name": "CanAllocateRemainingResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_state.cpp",
+          "line": 390
+        }
+      ]
+    },
+    {
+      "name": "SchedulerTest",
+      "tests": 12,
+      "testsuite": [
+        {
+          "name": "SelectsHighestPriority",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 15
+        },
+        {
+          "name": "ReturnsRequiredCpuCores",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 77
+        },
+        {
+          "name": "WaitsWhenCpuResourcesAreUnavailable",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 129
+        },
+        {
+          "name": "WaitsWhenMemoryIsUnavailable",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 179
+        },
+        {
+          "name": "RejectsNonReadyWorkload",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 224
+        },
+        {
+          "name": "ThrowsWhenNoWorkloadsExist",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 257
+        },
+        {
+          "name": "RejectsNullPolicy",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 280
+        },
+        {
+          "name": "StoresSubmittedWorkloadsInReadyQueue",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 301
+        },
+        {
+          "name": "ExposesResourceState",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 362
+        },
+        {
+          "name": "PriorityOverridesInsertionOrder",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 403
+        },
+        {
+          "name": "HighestPriorityResourceFailureReturnsWait",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 467
+        },
+        {
+          "name": "SchedulingDoesNotConsumeResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
+          "line": 520
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+if(EXISTS "/home/ai-os-1/AI_OS_!/Scheduler/build/scheduler_tests[1]_tests.cmake")
+  include("/home/ai-os-1/AI_OS_!/Scheduler/build/scheduler_tests[1]_tests.cmake")
+else()
+  add_test(scheduler_tests_NOT_BUILT scheduler_tests_NOT_BUILT)
+endif()

@@ -1,9 +1,13 @@
-aios-scheduler: \
+scheduler_tests: \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o \
-  CMakeFiles/aios-scheduler.dir/src/main.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o \
   libscheduler_core.a \
+  /usr/lib/aarch64-linux-gnu/libgtest_main.a \
+  /usr/lib/aarch64-linux-gnu/libgtest.a \
   /usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
@@ -29,8 +33,7 @@ aios-scheduler: \
   /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o \
-  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o \
-  /usr/lib/aarch64-linux-gnu/libm.so.6
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o
 
 /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o:
 
@@ -38,9 +41,17 @@ aios-scheduler: \
 
 /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o:
 
-CMakeFiles/aios-scheduler.dir/src/main.cpp.o:
+CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o:
 
 libscheduler_core.a:
+
+/usr/lib/aarch64-linux-gnu/libgtest_main.a:
+
+/usr/lib/aarch64-linux-gnu/libgtest.a:
 
 /usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so:
 
@@ -93,5 +104,3 @@ libscheduler_core.a:
 /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o:
 
 /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o:
-
-/usr/lib/aarch64-linux-gnu/libm.so.6:

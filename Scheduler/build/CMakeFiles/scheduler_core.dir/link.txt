@@ -1,0 +1,2 @@
+/usr/bin/ar qc libscheduler_core.a CMakeFiles/scheduler_core.dir/src/scheduler.cpp.o CMakeFiles/scheduler_core.dir/src/policy.cpp.o CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.o CMakeFiles/scheduler_core.dir/src/resource_state.cpp.o CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.o
+/usr/bin/ranlib libscheduler_core.a

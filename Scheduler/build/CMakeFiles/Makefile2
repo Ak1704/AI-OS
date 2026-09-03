@@ -63,11 +63,15 @@ CMAKE_BINARY_DIR = /home/ai-os-1/AI_OS_!/Scheduler/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/scheduler_core.dir/all
 all: CMakeFiles/aios-scheduler.dir/all
+all: CMakeFiles/scheduler_tests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
+codegen: CMakeFiles/scheduler_core.dir/codegen
 codegen: CMakeFiles/aios-scheduler.dir/codegen
+codegen: CMakeFiles/scheduler_tests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,22 +79,56 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/scheduler_core.dir/clean
 clean: CMakeFiles/aios-scheduler.dir/clean
+clean: CMakeFiles/scheduler_tests.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/scheduler_core.dir
+
+# All Build rule for target.
+CMakeFiles/scheduler_core.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target scheduler_core"
+.PHONY : CMakeFiles/scheduler_core.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/scheduler_core.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/scheduler_core.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 0
+.PHONY : CMakeFiles/scheduler_core.dir/rule
+
+# Convenience name for target.
+scheduler_core: CMakeFiles/scheduler_core.dir/rule
+.PHONY : scheduler_core
+
+# codegen rule for target.
+CMakeFiles/scheduler_core.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=3,4,5,6,7,8 "Finished codegen for target scheduler_core"
+.PHONY : CMakeFiles/scheduler_core.dir/codegen
+
+# clean rule for target.
+CMakeFiles/scheduler_core.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/clean
+.PHONY : CMakeFiles/scheduler_core.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/aios-scheduler.dir
 
 # All Build rule for target.
-CMakeFiles/aios-scheduler.dir/all:
+CMakeFiles/aios-scheduler.dir/all: CMakeFiles/scheduler_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=1,2,3,4 "Built target aios-scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=1,2 "Built target aios-scheduler"
 .PHONY : CMakeFiles/aios-scheduler.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/aios-scheduler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aios-scheduler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 0
 .PHONY : CMakeFiles/aios-scheduler.dir/rule
@@ -102,13 +140,45 @@ aios-scheduler: CMakeFiles/aios-scheduler.dir/rule
 # codegen rule for target.
 CMakeFiles/aios-scheduler.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target aios-scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=1,2 "Finished codegen for target aios-scheduler"
 .PHONY : CMakeFiles/aios-scheduler.dir/codegen
 
 # clean rule for target.
 CMakeFiles/aios-scheduler.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/clean
 .PHONY : CMakeFiles/aios-scheduler.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/scheduler_tests.dir
+
+# All Build rule for target.
+CMakeFiles/scheduler_tests.dir/all: CMakeFiles/scheduler_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=9,10,11,12 "Built target scheduler_tests"
+.PHONY : CMakeFiles/scheduler_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/scheduler_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/scheduler_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles 0
+.PHONY : CMakeFiles/scheduler_tests.dir/rule
+
+# Convenience name for target.
+scheduler_tests: CMakeFiles/scheduler_tests.dir/rule
+.PHONY : scheduler_tests
+
+# codegen rule for target.
+CMakeFiles/scheduler_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=9,10,11,12 "Finished codegen for target scheduler_tests"
+.PHONY : CMakeFiles/scheduler_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/scheduler_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/clean
+.PHONY : CMakeFiles/scheduler_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

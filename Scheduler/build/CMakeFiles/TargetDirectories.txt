@@ -1,3 +1,6 @@
+/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/scheduler_core.dir
 /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/aios-scheduler.dir
+/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/scheduler_tests.dir
+/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/test.dir
 /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/edit_cache.dir
 /home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles/rebuild_cache.dir

@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ai-os-1/AI_OS_!/Scheduler/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -117,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named scheduler_core
+
+# Build rule for target.
+scheduler_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scheduler_core
+.PHONY : scheduler_core
+
+# fast build rule for target.
+scheduler_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/build
+.PHONY : scheduler_core/fast
+
+#=============================================================================
 # Target rules for targets named aios-scheduler
 
 # Build rule for target.
@@ -128,6 +151,19 @@ aios-scheduler: cmake_check_build_system
 aios-scheduler/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/build
 .PHONY : aios-scheduler/fast
+
+#=============================================================================
+# Target rules for targets named scheduler_tests
+
+# Build rule for target.
+scheduler_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scheduler_tests
+.PHONY : scheduler_tests
+
+# fast build rule for target.
+scheduler_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/build
+.PHONY : scheduler_tests/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -158,7 +194,7 @@ src/policy.o: src/policy.cpp.o
 
 # target to build an object file
 src/policy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/policy.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/policy.cpp.o
 .PHONY : src/policy.cpp.o
 
 src/policy.i: src/policy.cpp.i
@@ -166,7 +202,7 @@ src/policy.i: src/policy.cpp.i
 
 # target to preprocess a source file
 src/policy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/policy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/policy.cpp.i
 .PHONY : src/policy.cpp.i
 
 src/policy.s: src/policy.cpp.s
@@ -174,15 +210,63 @@ src/policy.s: src/policy.cpp.s
 
 # target to generate assembly for a file
 src/policy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/policy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/policy.cpp.s
 .PHONY : src/policy.cpp.s
+
+src/ready_queue.o: src/ready_queue.cpp.o
+.PHONY : src/ready_queue.o
+
+# target to build an object file
+src/ready_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.o
+.PHONY : src/ready_queue.cpp.o
+
+src/ready_queue.i: src/ready_queue.cpp.i
+.PHONY : src/ready_queue.i
+
+# target to preprocess a source file
+src/ready_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.i
+.PHONY : src/ready_queue.cpp.i
+
+src/ready_queue.s: src/ready_queue.cpp.s
+.PHONY : src/ready_queue.s
+
+# target to generate assembly for a file
+src/ready_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.s
+.PHONY : src/ready_queue.cpp.s
+
+src/resource_state.o: src/resource_state.cpp.o
+.PHONY : src/resource_state.o
+
+# target to build an object file
+src/resource_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/resource_state.cpp.o
+.PHONY : src/resource_state.cpp.o
+
+src/resource_state.i: src/resource_state.cpp.i
+.PHONY : src/resource_state.i
+
+# target to preprocess a source file
+src/resource_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/resource_state.cpp.i
+.PHONY : src/resource_state.cpp.i
+
+src/resource_state.s: src/resource_state.cpp.s
+.PHONY : src/resource_state.s
+
+# target to generate assembly for a file
+src/resource_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/resource_state.cpp.s
+.PHONY : src/resource_state.cpp.s
 
 src/scheduler.o: src/scheduler.cpp.o
 .PHONY : src/scheduler.o
 
 # target to build an object file
 src/scheduler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler.cpp.o
 .PHONY : src/scheduler.cpp.o
 
 src/scheduler.i: src/scheduler.cpp.i
@@ -190,7 +274,7 @@ src/scheduler.i: src/scheduler.cpp.i
 
 # target to preprocess a source file
 src/scheduler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler.cpp.i
 .PHONY : src/scheduler.cpp.i
 
 src/scheduler.s: src/scheduler.cpp.s
@@ -198,8 +282,104 @@ src/scheduler.s: src/scheduler.cpp.s
 
 # target to generate assembly for a file
 src/scheduler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/aios-scheduler.dir/build.make CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler.cpp.s
 .PHONY : src/scheduler.cpp.s
+
+src/scheduler_state.o: src/scheduler_state.cpp.o
+.PHONY : src/scheduler_state.o
+
+# target to build an object file
+src/scheduler_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.o
+.PHONY : src/scheduler_state.cpp.o
+
+src/scheduler_state.i: src/scheduler_state.cpp.i
+.PHONY : src/scheduler_state.i
+
+# target to preprocess a source file
+src/scheduler_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.i
+.PHONY : src/scheduler_state.cpp.i
+
+src/scheduler_state.s: src/scheduler_state.cpp.s
+.PHONY : src/scheduler_state.s
+
+# target to generate assembly for a file
+src/scheduler_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_core.dir/build.make CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.s
+.PHONY : src/scheduler_state.cpp.s
+
+tests/test_ready_queue.o: tests/test_ready_queue.cpp.o
+.PHONY : tests/test_ready_queue.o
+
+# target to build an object file
+tests/test_ready_queue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o
+.PHONY : tests/test_ready_queue.cpp.o
+
+tests/test_ready_queue.i: tests/test_ready_queue.cpp.i
+.PHONY : tests/test_ready_queue.i
+
+# target to preprocess a source file
+tests/test_ready_queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.i
+.PHONY : tests/test_ready_queue.cpp.i
+
+tests/test_ready_queue.s: tests/test_ready_queue.cpp.s
+.PHONY : tests/test_ready_queue.s
+
+# target to generate assembly for a file
+tests/test_ready_queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.s
+.PHONY : tests/test_ready_queue.cpp.s
+
+tests/test_resource_state.o: tests/test_resource_state.cpp.o
+.PHONY : tests/test_resource_state.o
+
+# target to build an object file
+tests/test_resource_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o
+.PHONY : tests/test_resource_state.cpp.o
+
+tests/test_resource_state.i: tests/test_resource_state.cpp.i
+.PHONY : tests/test_resource_state.i
+
+# target to preprocess a source file
+tests/test_resource_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.i
+.PHONY : tests/test_resource_state.cpp.i
+
+tests/test_resource_state.s: tests/test_resource_state.cpp.s
+.PHONY : tests/test_resource_state.s
+
+# target to generate assembly for a file
+tests/test_resource_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.s
+.PHONY : tests/test_resource_state.cpp.s
+
+tests/test_scheduler.o: tests/test_scheduler.cpp.o
+.PHONY : tests/test_scheduler.o
+
+# target to build an object file
+tests/test_scheduler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o
+.PHONY : tests/test_scheduler.cpp.o
+
+tests/test_scheduler.i: tests/test_scheduler.cpp.i
+.PHONY : tests/test_scheduler.i
+
+# target to preprocess a source file
+tests/test_scheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.i
+.PHONY : tests/test_scheduler.cpp.i
+
+tests/test_scheduler.s: tests/test_scheduler.cpp.s
+.PHONY : tests/test_scheduler.s
+
+# target to generate assembly for a file
+tests/test_scheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scheduler_tests.dir/build.make CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.s
+.PHONY : tests/test_scheduler.cpp.s
 
 # Help Target
 help:
@@ -209,16 +389,37 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... aios-scheduler"
+	@echo "... scheduler_core"
+	@echo "... scheduler_tests"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/policy.o"
 	@echo "... src/policy.i"
 	@echo "... src/policy.s"
+	@echo "... src/ready_queue.o"
+	@echo "... src/ready_queue.i"
+	@echo "... src/ready_queue.s"
+	@echo "... src/resource_state.o"
+	@echo "... src/resource_state.i"
+	@echo "... src/resource_state.s"
 	@echo "... src/scheduler.o"
 	@echo "... src/scheduler.i"
 	@echo "... src/scheduler.s"
+	@echo "... src/scheduler_state.o"
+	@echo "... src/scheduler_state.i"
+	@echo "... src/scheduler_state.s"
+	@echo "... tests/test_ready_queue.o"
+	@echo "... tests/test_ready_queue.i"
+	@echo "... tests/test_ready_queue.s"
+	@echo "... tests/test_resource_state.o"
+	@echo "... tests/test_resource_state.i"
+	@echo "... tests/test_resource_state.s"
+	@echo "... tests/test_scheduler.o"
+	@echo "... tests/test_scheduler.i"
+	@echo "... tests/test_scheduler.s"
 .PHONY : help
 
 

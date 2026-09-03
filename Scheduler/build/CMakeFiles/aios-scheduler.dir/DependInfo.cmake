@@ -9,8 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ai-os-1/AI_OS_!/Scheduler/src/main.cpp" "CMakeFiles/aios-scheduler.dir/src/main.cpp.o" "gcc" "CMakeFiles/aios-scheduler.dir/src/main.cpp.o.d"
-  "/home/ai-os-1/AI_OS_!/Scheduler/src/policy.cpp" "CMakeFiles/aios-scheduler.dir/src/policy.cpp.o" "gcc" "CMakeFiles/aios-scheduler.dir/src/policy.cpp.o.d"
-  "/home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp" "CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o" "gcc" "CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o.d"
   "" "aios-scheduler" "gcc" "CMakeFiles/aios-scheduler.dir/link.d"
   )
 

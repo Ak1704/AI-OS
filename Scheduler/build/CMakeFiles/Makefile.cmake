@@ -10,8 +10,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/ai-os-1/AI_OS_!/Scheduler/CMakeLists.txt"
   "CMakeFiles/4.2.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.3/CMakeSystem.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/GTest/GTestConfig.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/GTest/GTestConfigVersion.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/GTest/GTestTargets-none.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/GTest/GTestTargets.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake"
+  "/usr/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake"
@@ -23,9 +28,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-4.2/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-4.2/Modules/FindGTest.cmake"
   "/usr/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-4.2/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-4.2/Modules/FindThreads.cmake"
+  "/usr/share/cmake-4.2/Modules/GoogleTest.cmake"
   "/usr/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/usr/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake"
@@ -54,5 +61,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/scheduler_core.dir/DependInfo.cmake"
   "CMakeFiles/aios-scheduler.dir/DependInfo.cmake"
+  "CMakeFiles/scheduler_tests.dir/DependInfo.cmake"
   )

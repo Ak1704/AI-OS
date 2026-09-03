@@ -1,6 +1,7 @@
-CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
- /home/ai-os-1/AI_OS_!/Scheduler/src/main.cpp /usr/include/stdc-predef.h \
- /home/ai-os-1/AI_OS_!/Scheduler/include/priority_policy.hpp \
+CMakeFiles/scheduler_core.dir/src/scheduler.cpp.o: \
+ /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/policy.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
  /usr/include/c++/15/cstdint \
@@ -131,7 +132,6 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
- /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler_state.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/ready_queue.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/resource_state.hpp \
@@ -216,6 +216,5 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/ranges_uninitialized.h \
  /usr/include/c++/15/bits/ranges_algobase.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/iostream \
- /usr/include/c++/15/ostream /usr/include/c++/15/bits/ostream.tcc \
- /usr/include/c++/15/istream /usr/include/c++/15/bits/istream.tcc
+ /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/utility \
+ /usr/include/c++/15/bits/stl_relops.h

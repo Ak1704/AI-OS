@@ -132,14 +132,19 @@ CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o: \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler_state.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/ready_queue.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/resource_state.hpp \
+ /usr/include/c++/15/optional /usr/include/c++/15/exception \
+ /usr/include/c++/15/bits/exception_ptr.h \
+ /usr/include/c++/15/bits/cxxabi_init_exception.h \
+ /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/nested_exception.h \
+ /usr/include/c++/15/bits/enable_special_members.h \
  /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
  /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
  /usr/include/c++/15/bits/ostream.h /usr/include/c++/15/ios \
- /usr/include/c++/15/exception /usr/include/c++/15/bits/exception_ptr.h \
- /usr/include/c++/15/bits/cxxabi_init_exception.h \
- /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/nested_exception.h \
  /usr/include/c++/15/bits/ios_base.h /usr/include/c++/15/ext/atomicity.h \
  /usr/include/aarch64-linux-gnu/c++/15/bits/gthr.h \
  /usr/include/aarch64-linux-gnu/c++/15/bits/gthr-default.h \
