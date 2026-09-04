@@ -86,19 +86,147 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/main.cpp -o CMakeFiles/aios-scheduler.dir/src/main.cpp.s
 
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp
+
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp > CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler.cpp -o CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/policy.cpp
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/aios-scheduler.dir/src/policy.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/policy.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/policy.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/policy.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/policy.cpp
+
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/policy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/policy.cpp > CMakeFiles/aios-scheduler.dir/src/policy.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/policy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/policy.cpp -o CMakeFiles/aios-scheduler.dir/src/policy.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/ready_queue.cpp
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/ready_queue.cpp
+
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/ready_queue.cpp > CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/ready_queue.cpp -o CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/resource_state.cpp
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/resource_state.cpp
+
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/resource_state.cpp > CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/resource_state.cpp -o CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler_state.cpp
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler_state.cpp
+
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler_state.cpp > CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler_state.cpp -o CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp
+
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp > CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp -o CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp
+
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp > CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp -o CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.s
+
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o: CMakeFiles/aios-scheduler.dir/flags.make
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o -MF CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o.d -o CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp
+
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp > CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.i
+
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp -o CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.s
+
 # Object files for target aios-scheduler
 aios__scheduler_OBJECTS = \
-"CMakeFiles/aios-scheduler.dir/src/main.cpp.o"
+"CMakeFiles/aios-scheduler.dir/src/main.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/policy.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o" \
+"CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o"
 
 # External object files for target aios-scheduler
 aios__scheduler_EXTERNAL_OBJECTS =
 
 aios-scheduler: CMakeFiles/aios-scheduler.dir/src/main.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/policy.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o
+aios-scheduler: CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o
 aios-scheduler: CMakeFiles/aios-scheduler.dir/build.make
 aios-scheduler: CMakeFiles/aios-scheduler.dir/compiler_depend.ts
 aios-scheduler: libscheduler_core.a
 aios-scheduler: CMakeFiles/aios-scheduler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable aios-scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable aios-scheduler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aios-scheduler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -14,6 +14,9 @@ add_library(scheduler_core
     src/ready_queue.cpp
     src/resource_state.cpp
     src/scheduler_state.cpp
+    src/resource_manager.cpp
+    src/cpu_manager.cpp
+    src/linux_resource_manager.cpp
 )
 
 target_include_directories(
@@ -25,6 +28,14 @@ target_include_directories(
 add_executable(
     aios-scheduler
     src/main.cpp
+    src/scheduler.cpp
+    src/policy.cpp
+    src/ready_queue.cpp
+    src/resource_state.cpp
+    src/scheduler_state.cpp
+    src/resource_manager.cpp
+    src/cpu_manager.cpp
+    src/linux_resource_manager.cpp
 )
 
 target_link_libraries(
@@ -42,6 +53,9 @@ add_executable(
     tests/test_ready_queue.cpp
     tests/test_resource_state.cpp
     tests/test_scheduler.cpp
+    tests/test_resource_manager.cpp
+    tests/test_cpu_manager.cpp
+    tests/test_linux_resource_manager.cpp
 )
 
 target_link_libraries(

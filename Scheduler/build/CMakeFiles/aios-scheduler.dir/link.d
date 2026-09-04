@@ -3,6 +3,14 @@ aios-scheduler: \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/aios-scheduler.dir/src/main.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/policy.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o \
+  CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o \
   libscheduler_core.a \
   /usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
@@ -39,6 +47,22 @@ aios-scheduler: \
 /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o:
 
 CMakeFiles/aios-scheduler.dir/src/main.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/policy.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/ready_queue.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/resource_state.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/scheduler_state.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/resource_manager.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/cpu_manager.cpp.o:
+
+CMakeFiles/aios-scheduler.dir/src/linux_resource_manager.cpp.o:
 
 libscheduler_core.a:
 
