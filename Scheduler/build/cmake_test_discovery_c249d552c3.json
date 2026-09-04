@@ -1,5 +1,5 @@
 {
-  "tests": 30,
+  "tests": 44,
   "name": "AllTests",
   "testsuites": [
     {
@@ -106,67 +106,155 @@
     },
     {
       "name": "SchedulerTest",
-      "tests": 12,
+      "tests": 10,
       "testsuite": [
         {
-          "name": "SelectsHighestPriority",
+          "name": "RejectsNullPolicy",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 15
+          "line": 97
         },
         {
-          "name": "ReturnsRequiredCpuCores",
+          "name": "RejectsNullResourceManager",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 77
+          "line": 117
         },
         {
-          "name": "WaitsWhenCpuResourcesAreUnavailable",
+          "name": "CanSubmitReadyWorkload",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 129
-        },
-        {
-          "name": "WaitsWhenMemoryIsUnavailable",
-          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 179
+          "line": 137
         },
         {
           "name": "RejectsNonReadyWorkload",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 224
+          "line": 174
         },
         {
-          "name": "ThrowsWhenNoWorkloadsExist",
+          "name": "SelectsHighestPriorityWorkload",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 257
+          "line": 207
         },
         {
-          "name": "RejectsNullPolicy",
+          "name": "WaitsWhenRuntimeIsMissing",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 280
+          "line": 270
         },
         {
-          "name": "StoresSubmittedWorkloadsInReadyQueue",
+          "name": "AppliesDecisionThroughResourceManager",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 301
+          "line": 318
         },
         {
-          "name": "ExposesResourceState",
+          "name": "WaitsWhenResourceManagerFails",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 362
+          "line": 378
         },
         {
-          "name": "PriorityOverridesInsertionOrder",
+          "name": "WaitsWhenResourcesAreInsufficient",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 403
+          "line": 435
         },
         {
-          "name": "HighestPriorityResourceFailureReturnsWait",
+          "name": "DecisionContainsRequiredCpuCores",
           "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 467
+          "line": 490
+        }
+      ]
+    },
+    {
+      "name": "ResourceManagerTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "CanApplyDecision",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_manager.cpp",
+          "line": 96
         },
         {
-          "name": "SchedulingDoesNotConsumeResources",
-          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_scheduler.cpp",
-          "line": 520
+          "name": "CanReleaseResources",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_manager.cpp",
+          "line": 164
+        },
+        {
+          "name": "SupportsPolymorphism",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_resource_manager.cpp",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "name": "CpuManagerTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "ReportsTotalCpuCores",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 10
+        },
+        {
+          "name": "AcceptsValidCpuIds",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 21
+        },
+        {
+          "name": "RejectsNegativeCpuId",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 43
+        },
+        {
+          "name": "RejectsCpuIdOutsideRange",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 53
+        },
+        {
+          "name": "RejectsEmptyCpuSet",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 67
+        },
+        {
+          "name": "RejectsInvalidCpuSet",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_cpu_manager.cpp",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "name": "LinuxResourceManagerTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "RejectsWaitDecision",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 6
+        },
+        {
+          "name": "RejectsWorkloadMismatch",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 48
+        },
+        {
+          "name": "RejectsRuntimeWorkloadMismatch",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 92
+        },
+        {
+          "name": "RejectsInvalidCpuAllocation",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 135
+        },
+        {
+          "name": "RejectsZeroCpuRequirement",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 179
+        },
+        {
+          "name": "RejectsNegativeCpuRequirement",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 222
+        },
+        {
+          "name": "AcceptsMatchingIdentifiers",
+          "file": "\/home\/ai-os-1\/AI_OS_!\/Scheduler\/tests\/test_linux_resource_manager.cpp",
+          "line": 265
         }
       ]
     }

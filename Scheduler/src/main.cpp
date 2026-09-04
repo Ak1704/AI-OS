@@ -1,16 +1,22 @@
+#include "linux_resource_manager.hpp"
 #include "priority_policy.hpp"
 #include "scheduler.hpp"
 
 #include <iostream>
 #include <memory>
+#include <unistd.h>
 
 int main()
 {
     auto policy =
         std::make_unique<PriorityPolicy>();
 
+    auto resource_manager =
+        std::make_unique<LinuxResourceManager>(4);
+    
     Scheduler scheduler(
         std::move(policy),
+        std::move(resource_manager),
         4,
         8192
     );

@@ -5,6 +5,9 @@ scheduler_tests: \
   CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o \
   CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o \
   CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o \
   libscheduler_core.a \
   /usr/lib/aarch64-linux-gnu/libgtest_main.a \
   /usr/lib/aarch64-linux-gnu/libgtest.a \
@@ -46,6 +49,12 @@ CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o:
 CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o:
 
 CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o:
 
 libscheduler_core.a:
 

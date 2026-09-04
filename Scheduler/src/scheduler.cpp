@@ -5,6 +5,7 @@
 
 Scheduler::Scheduler(
     std::unique_ptr<SchedulingPolicy> policy,
+    std::unique_ptr<ResourceManager> resource_manager,
     std::size_t total_cpu_cores,
     std::uint64_t total_memory_mb
 )
@@ -12,7 +13,10 @@ Scheduler::Scheduler(
           total_cpu_cores,
           total_memory_mb
       ),
-      policy_(std::move(policy))
+      policy_(std::move(policy)),
+      resource_manager_(
+          std::move(resource_manager)
+      )
 {
     if (!policy_)
     {
@@ -20,6 +24,21 @@ Scheduler::Scheduler(
             "Scheduler requires a policy"
         );
     }
+
+    if (!resource_manager_)
+    {
+        throw std::invalid_argument(
+            "Scheduler requires a resource manager"
+        );
+    }
+}
+
+void Scheduler::register_runtime(
+    const WorkloadRuntime& runtime
+)
+{
+    runtimes_[runtime.workload_id] =
+        runtime;
 }
 
 void Scheduler::submit(
@@ -97,9 +116,36 @@ SchedulingDecision Scheduler::schedule()
     decision.reason =
         "Selected by scheduling policy";
 
+    auto runtime_it =
+        runtimes_.find(workload.id);
+
+    if (runtime_it == runtimes_.end())
+    {
+        decision.action =
+            SchedulingAction::WAIT;
+
+        decision.reason =
+            "Workload has no registered runtime";
+
+        return decision;
+    }
+
+    if (!resource_manager_->apply(
+            decision,
+            workload,
+            runtime_it->second))
+    {
+        decision.action =
+            SchedulingAction::WAIT;
+
+        decision.reason =
+            "Resource manager failed to apply decision";
+
+        return decision;
+    }
+
     return decision;
 }
-
 const SchedulerState&
 Scheduler::state() const
 {

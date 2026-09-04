@@ -1,7 +1,12 @@
-[ 50%] Built target scheduler_core
-[ 66%] Built target aios-scheduler
-[ 75%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o
-[ 83%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o
-[ 91%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o
-[100%] Linking CXX executable scheduler_tests
+[  3%] Building CXX object CMakeFiles/scheduler_core.dir/src/scheduler.cpp.o
+[  7%] Linking CXX static library libscheduler_core.a
+[ 34%] Built target scheduler_core
+[ 38%] Building CXX object CMakeFiles/aios-scheduler.dir/src/scheduler.cpp.o
+[ 42%] Linking CXX executable aios-scheduler
+[ 73%] Built target aios-scheduler
+[ 76%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o
+[ 80%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o
+[ 84%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o
+[ 88%] Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o
+[ 92%] Linking CXX executable scheduler_tests
 [100%] Built target scheduler_tests

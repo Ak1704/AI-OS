@@ -2,6 +2,8 @@
 Scheduler/build/
 cmake-build-*/
 
+temp/
+
 # Compiled binaries
 *.o
 *.obj

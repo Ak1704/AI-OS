@@ -1,24 +1,223 @@
-
 #include "priority_policy.hpp"
+#include "resource_manager.hpp"
 #include "scheduler.hpp"
 
 #include <gtest/gtest.h>
 
 #include <memory>
 
-// ------------------------------------------------------------
-// Test 1:
-// Scheduler should select the highest-priority READY
-// workload using PriorityPolicy.
-// ------------------------------------------------------------
 
-TEST(SchedulerTest, SelectsHighestPriority)
+class TestResourceManager : public ResourceManager
+{
+public:
+
+    bool apply(
+        const SchedulingDecision& decision,
+        const WorkloadDescriptor& workload,
+        const WorkloadRuntime& runtime
+    ) override
+    {
+        apply_called_ = true;
+
+        last_decision_ =
+            decision;
+
+        last_workload_id_ =
+            workload.id;
+
+        last_process_id_ =
+            runtime.process_id;
+
+        return should_apply_;
+    }
+
+    void release(
+        const WorkloadDescriptor& workload,
+        const WorkloadRuntime& runtime
+    ) override
+    {
+        release_called_ = true;
+
+        last_workload_id_ =
+            workload.id;
+
+        last_process_id_ =
+            runtime.process_id;
+    }
+
+    void set_apply_result(
+        bool result
+    )
+    {
+        should_apply_ = result;
+    }
+
+    bool apply_called() const
+    {
+        return apply_called_;
+    }
+
+    bool release_called() const
+    {
+        return release_called_;
+    }
+
+    const SchedulingDecision&
+    last_decision() const
+    {
+        return last_decision_;
+    }
+
+    std::uint64_t last_workload_id() const
+    {
+        return last_workload_id_;
+    }
+
+    int last_process_id() const
+    {
+        return last_process_id_;
+    }
+
+private:
+
+    bool should_apply_ = true;
+
+    bool apply_called_ = false;
+
+    bool release_called_ = false;
+
+    SchedulingDecision last_decision_;
+
+    std::uint64_t last_workload_id_ = 0;
+
+    int last_process_id_ = -1;
+};
+
+
+TEST(
+    SchedulerTest,
+    RejectsNullPolicy
+)
+{
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    EXPECT_THROW(
+        Scheduler(
+            nullptr,
+            std::move(resource_manager),
+            4,
+            8192
+        ),
+        std::invalid_argument
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    RejectsNullResourceManager
+)
 {
     auto policy =
         std::make_unique<PriorityPolicy>();
 
+    EXPECT_THROW(
+        Scheduler(
+            std::move(policy),
+            nullptr,
+            4,
+            8192
+        ),
+        std::invalid_argument
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    CanSubmitReadyWorkload
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
     Scheduler scheduler(
         std::move(policy),
+        std::move(resource_manager),
+        4,
+        8192
+    );
+
+    scheduler.submit({
+        1,
+        "Training",
+        WorkloadType::TRAINING,
+        8,
+        2,
+        4096,
+        WorkloadState::READY
+    });
+
+    EXPECT_EQ(
+        scheduler.state()
+            .ready_queue()
+            .size(),
+        1
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    RejectsNonReadyWorkload
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
+        4,
+        8192
+    );
+
+    EXPECT_THROW(
+        scheduler.submit({
+            1,
+            "Training",
+            WorkloadType::TRAINING,
+            8,
+            2,
+            4096,
+            WorkloadState::RUNNING
+        }),
+        std::invalid_argument
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    SelectsHighestPriorityWorkload
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
         4,
         8192
     );
@@ -43,14 +242,14 @@ TEST(SchedulerTest, SelectsHighestPriority)
         WorkloadState::READY
     });
 
-    scheduler.submit({
-        3,
-        "DataLoader",
-        WorkloadType::DATA_LOADING,
-        5,
+    scheduler.register_runtime({
         1,
-        1024,
-        WorkloadState::READY
+        1001
+    });
+
+    scheduler.register_runtime({
+        2,
+        1002
     });
 
     auto decision =
@@ -68,19 +267,20 @@ TEST(SchedulerTest, SelectsHighestPriority)
 }
 
 
-// ------------------------------------------------------------
-// Test 2:
-// Scheduler should return the CPU cores required by
-// the selected workload.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, ReturnsRequiredCpuCores)
+TEST(
+    SchedulerTest,
+    WaitsWhenRuntimeIsMissing
+)
 {
     auto policy =
         std::make_unique<PriorityPolicy>();
 
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
     Scheduler scheduler(
         std::move(policy),
+        std::move(resource_manager),
         4,
         8192
     );
@@ -89,7 +289,7 @@ TEST(SchedulerTest, ReturnsRequiredCpuCores)
         1,
         "Training",
         WorkloadType::TRAINING,
-        10,
+        8,
         2,
         4096,
         WorkloadState::READY
@@ -98,10 +298,230 @@ TEST(SchedulerTest, ReturnsRequiredCpuCores)
     auto decision =
         scheduler.schedule();
 
-    ASSERT_EQ(
+    EXPECT_EQ(
+        decision.workload_id,
+        1
+    );
+
+    EXPECT_EQ(
+        decision.action,
+        SchedulingAction::WAIT
+    );
+
+    EXPECT_EQ(
+        decision.reason,
+        "Workload has no registered runtime"
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    AppliesDecisionThroughResourceManager
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    TestResourceManager* manager_ptr =
+        resource_manager.get();
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
+        4,
+        8192
+    );
+
+    scheduler.submit({
+        1,
+        "Training",
+        WorkloadType::TRAINING,
+        8,
+        2,
+        4096,
+        WorkloadState::READY
+    });
+
+    scheduler.register_runtime({
+        1,
+        1234
+    });
+
+    auto decision =
+        scheduler.schedule();
+
+    EXPECT_EQ(
         decision.action,
         SchedulingAction::RUN
     );
+
+    EXPECT_TRUE(
+        manager_ptr->apply_called()
+    );
+
+    EXPECT_EQ(
+        manager_ptr->last_workload_id(),
+        1
+    );
+
+    EXPECT_EQ(
+        manager_ptr->last_process_id(),
+        1234
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    WaitsWhenResourceManagerFails
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    TestResourceManager* manager_ptr =
+        resource_manager.get();
+
+    manager_ptr->set_apply_result(false);
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
+        4,
+        8192
+    );
+
+    scheduler.submit({
+        1,
+        "Training",
+        WorkloadType::TRAINING,
+        8,
+        2,
+        4096,
+        WorkloadState::READY
+    });
+
+    scheduler.register_runtime({
+        1,
+        1234
+    });
+
+    auto decision =
+        scheduler.schedule();
+
+    EXPECT_EQ(
+        decision.action,
+        SchedulingAction::WAIT
+    );
+
+    EXPECT_EQ(
+        decision.reason,
+        "Resource manager failed to apply decision"
+    );
+
+    EXPECT_TRUE(
+        manager_ptr->apply_called()
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    WaitsWhenResourcesAreInsufficient
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    TestResourceManager* manager_ptr =
+        resource_manager.get();
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
+        2,
+        4096
+    );
+
+    scheduler.submit({
+        1,
+        "LargeTraining",
+        WorkloadType::TRAINING,
+        10,
+        4,
+        8192,
+        WorkloadState::READY
+    });
+
+    scheduler.register_runtime({
+        1,
+        1234
+    });
+
+    auto decision =
+        scheduler.schedule();
+
+    EXPECT_EQ(
+        decision.action,
+        SchedulingAction::WAIT
+    );
+
+    EXPECT_EQ(
+        decision.reason,
+        "Insufficient resources"
+    );
+
+    EXPECT_FALSE(
+        manager_ptr->apply_called()
+    );
+}
+
+
+TEST(
+    SchedulerTest,
+    DecisionContainsRequiredCpuCores
+)
+{
+    auto policy =
+        std::make_unique<PriorityPolicy>();
+
+    auto resource_manager =
+        std::make_unique<TestResourceManager>();
+
+    Scheduler scheduler(
+        std::move(policy),
+        std::move(resource_manager),
+        4,
+        8192
+    );
+
+    scheduler.submit({
+        1,
+        "Training",
+        WorkloadType::TRAINING,
+        8,
+        2,
+        4096,
+        WorkloadState::READY
+    });
+
+    scheduler.register_runtime({
+        1,
+        1234
+    });
+
+    auto decision =
+        scheduler.schedule();
 
     ASSERT_EQ(
         decision.cpu_cores.size(),
@@ -118,446 +538,3 @@ TEST(SchedulerTest, ReturnsRequiredCpuCores)
         1
     );
 }
-
-
-// ------------------------------------------------------------
-// Test 3:
-// Scheduler should return WAIT when the selected workload
-// requires more CPU cores than are available.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, WaitsWhenCpuResourcesAreUnavailable)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        2,
-        8192
-    );
-
-    scheduler.submit({
-        1,
-        "LargeTraining",
-        WorkloadType::TRAINING,
-        10,
-        4,
-        4096,
-        WorkloadState::READY
-    });
-
-    auto decision =
-        scheduler.schedule();
-
-    EXPECT_EQ(
-        decision.workload_id,
-        1
-    );
-
-    EXPECT_EQ(
-        decision.action,
-        SchedulingAction::WAIT
-    );
-
-    EXPECT_TRUE(
-        decision.cpu_cores.empty()
-    );
-
-    EXPECT_EQ(
-        decision.reason,
-        "Insufficient resources"
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 4:
-// Scheduler should return WAIT when memory is insufficient.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, WaitsWhenMemoryIsUnavailable)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        4,
-        2048
-    );
-
-    scheduler.submit({
-        1,
-        "LargeTraining",
-        WorkloadType::TRAINING,
-        10,
-        2,
-        4096,
-        WorkloadState::READY
-    });
-
-    auto decision =
-        scheduler.schedule();
-
-    EXPECT_EQ(
-        decision.workload_id,
-        1
-    );
-
-    EXPECT_EQ(
-        decision.action,
-        SchedulingAction::WAIT
-    );
-
-    EXPECT_TRUE(
-        decision.cpu_cores.empty()
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 5:
-// Scheduler should reject a non-READY workload.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, RejectsNonReadyWorkload)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        4,
-        8192
-    );
-
-    WorkloadDescriptor running_workload{
-        1,
-        "Training",
-        WorkloadType::TRAINING,
-        8,
-        2,
-        4096,
-        WorkloadState::RUNNING
-    };
-
-    EXPECT_THROW(
-        scheduler.submit(running_workload),
-        std::invalid_argument
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 6:
-// Scheduling with no workloads should throw an exception.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, ThrowsWhenNoWorkloadsExist)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        4,
-        8192
-    );
-
-    EXPECT_THROW(
-        scheduler.schedule(),
-        std::runtime_error
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 7:
-// Scheduler should reject a null policy.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, RejectsNullPolicy)
-{
-    std::unique_ptr<SchedulingPolicy> policy =
-        nullptr;
-
-    EXPECT_THROW(
-        Scheduler scheduler(
-            std::move(policy),
-            4,
-            8192
-        ),
-        std::invalid_argument
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 8:
-// Scheduler state should contain submitted workloads.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, StoresSubmittedWorkloadsInReadyQueue)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        4,
-        8192
-    );
-
-    scheduler.submit({
-        1,
-        "Training",
-        WorkloadType::TRAINING,
-        8,
-        2,
-        4096,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        2,
-        "Inference",
-        WorkloadType::INFERENCE,
-        10,
-        1,
-        2048,
-        WorkloadState::READY
-    });
-
-    const auto& state =
-        scheduler.state();
-
-    EXPECT_EQ(
-        state.ready_queue().size(),
-        2
-    );
-
-    ASSERT_EQ(
-        state.ready_queue().workloads().size(),
-        2
-    );
-
-    EXPECT_EQ(
-        state.ready_queue().workloads()[0].id,
-        1
-    );
-
-    EXPECT_EQ(
-        state.ready_queue().workloads()[1].id,
-        2
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 9:
-// Scheduler should expose the configured total resources.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, ExposesResourceState)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        8,
-        16384
-    );
-
-    const auto& resources =
-        scheduler.state().resources();
-
-    EXPECT_EQ(
-        resources.total_cpu_cores(),
-        8
-    );
-
-    EXPECT_EQ(
-        resources.available_cpu_cores(),
-        8
-    );
-
-    EXPECT_EQ(
-        resources.total_memory_mb(),
-        16384
-    );
-
-    EXPECT_EQ(
-        resources.available_memory_mb(),
-        16384
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 10:
-// Highest priority should win regardless of insertion order.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, PriorityOverridesInsertionOrder)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        8,
-        16384
-    );
-
-    scheduler.submit({
-        1,
-        "Background",
-        WorkloadType::BACKGROUND,
-        1,
-        1,
-        512,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        2,
-        "Training",
-        WorkloadType::TRAINING,
-        7,
-        4,
-        8192,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        3,
-        "Inference",
-        WorkloadType::INFERENCE,
-        10,
-        2,
-        2048,
-        WorkloadState::READY
-    });
-
-    auto decision =
-        scheduler.schedule();
-
-    EXPECT_EQ(
-        decision.workload_id,
-        3
-    );
-
-    EXPECT_EQ(
-        decision.action,
-        SchedulingAction::RUN
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 11:
-// If the highest-priority workload cannot fit into the
-// available resources, the current Phase 2 scheduler
-// should return WAIT rather than automatically selecting
-// a lower-priority workload.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, HighestPriorityResourceFailureReturnsWait)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        2,
-        4096
-    );
-
-    scheduler.submit({
-        1,
-        "LargeInference",
-        WorkloadType::INFERENCE,
-        10,
-        4,
-        8192,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        2,
-        "SmallBackground",
-        WorkloadType::BACKGROUND,
-        1,
-        1,
-        512,
-        WorkloadState::READY
-    });
-
-    auto decision =
-        scheduler.schedule();
-
-    EXPECT_EQ(
-        decision.workload_id,
-        1
-    );
-
-    EXPECT_EQ(
-        decision.action,
-        SchedulingAction::WAIT
-    );
-}
-
-
-// ------------------------------------------------------------
-// Test 12:
-// Scheduling a workload should not itself consume resources.
-// Resource allocation is still logically separate from
-// scheduling in Phase 2.
-// ------------------------------------------------------------
-
-TEST(SchedulerTest, SchedulingDoesNotConsumeResources)
-{
-    auto policy =
-        std::make_unique<PriorityPolicy>();
-
-    Scheduler scheduler(
-        std::move(policy),
-        4,
-        8192
-    );
-
-    scheduler.submit({
-        1,
-        "Training",
-        WorkloadType::TRAINING,
-        10,
-        2,
-        4096,
-        WorkloadState::READY
-    });
-
-    auto decision =
-        scheduler.schedule();
-
-    ASSERT_EQ(
-        decision.action,
-        SchedulingAction::RUN
-    );
-
-    EXPECT_EQ(
-        scheduler.state()
-            .resources()
-            .available_cpu_cores(),
-        4
-    );
-
-    EXPECT_EQ(
-        scheduler.state()
-            .resources()
-            .available_memory_mb(),
-        8192
-    );
-}
-

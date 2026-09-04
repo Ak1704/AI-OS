@@ -1,9 +1,8 @@
 CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /home/ai-os-1/AI_OS_!/Scheduler/src/main.cpp /usr/include/stdc-predef.h \
- /home/ai-os-1/AI_OS_!/Scheduler/include/priority_policy.hpp \
- /home/ai-os-1/AI_OS_!/Scheduler/include/policy.hpp \
- /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
- /usr/include/c++/15/cstdint \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/linux_resource_manager.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/cpu_manager.hpp \
+ /usr/include/c++/15/cstddef \
  /usr/include/aarch64-linux-gnu/c++/15/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/15/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -15,6 +14,56 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
  /usr/include/aarch64-linux-gnu/c++/15/bits/cpu_defines.h \
  /usr/include/c++/15/pstl/pstl_config.h \
+ /usr/lib/gcc/aarch64-linux-gnu/15/include/stddef.h \
+ /usr/include/c++/15/bits/version.h /usr/include/c++/15/vector \
+ /usr/include/c++/15/bits/requires_hosted.h \
+ /usr/include/c++/15/bits/stl_algobase.h \
+ /usr/include/c++/15/bits/functexcept.h \
+ /usr/include/c++/15/bits/exception_defines.h \
+ /usr/include/c++/15/bits/cpp_type_traits.h \
+ /usr/include/c++/15/type_traits /usr/include/c++/15/ext/type_traits.h \
+ /usr/include/c++/15/ext/numeric_traits.h \
+ /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/move.h \
+ /usr/include/c++/15/bits/utility.h /usr/include/c++/15/compare \
+ /usr/include/c++/15/concepts \
+ /usr/include/c++/15/bits/stl_iterator_base_types.h \
+ /usr/include/c++/15/bits/iterator_concepts.h \
+ /usr/include/c++/15/bits/ptr_traits.h \
+ /usr/include/c++/15/bits/ranges_cmp.h \
+ /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/15/bits/concept_check.h \
+ /usr/include/c++/15/debug/assertions.h \
+ /usr/include/c++/15/bits/stl_iterator.h /usr/include/c++/15/new \
+ /usr/include/c++/15/bits/exception.h \
+ /usr/include/c++/15/bits/stl_construct.h \
+ /usr/include/c++/15/debug/debug.h \
+ /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
+ /usr/include/c++/15/bits/allocator.h \
+ /usr/include/aarch64-linux-gnu/c++/15/bits/c++allocator.h \
+ /usr/include/c++/15/bits/new_allocator.h \
+ /usr/include/c++/15/bits/memoryfwd.h \
+ /usr/include/c++/15/bits/stl_uninitialized.h \
+ /usr/include/c++/15/ext/alloc_traits.h \
+ /usr/include/c++/15/bits/alloc_traits.h \
+ /usr/include/c++/15/bits/stl_vector.h \
+ /usr/include/c++/15/initializer_list \
+ /usr/include/c++/15/bits/ranges_base.h \
+ /usr/include/c++/15/bits/max_size_type.h /usr/include/c++/15/numbers \
+ /usr/include/c++/15/bits/stl_bvector.h \
+ /usr/include/c++/15/bits/functional_hash.h \
+ /usr/include/c++/15/bits/hash_bytes.h /usr/include/c++/15/bits/refwrap.h \
+ /usr/include/c++/15/bits/invoke.h \
+ /usr/include/c++/15/bits/stl_function.h \
+ /usr/include/c++/15/backward/binders.h \
+ /usr/include/c++/15/bits/range_access.h \
+ /usr/include/c++/15/bits/vector.tcc \
+ /usr/include/c++/15/bits/memory_resource.h \
+ /usr/include/c++/15/bits/uses_allocator.h \
+ /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
+ /usr/include/c++/15/bits/ranges_util.h \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/resource_manager.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
+ /usr/include/c++/15/cstdint \
  /usr/lib/gcc/aarch64-linux-gnu/15/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/aarch64-linux-gnu/bits/types.h \
@@ -24,14 +73,11 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-least.h \
- /usr/include/c++/15/string /usr/include/c++/15/bits/requires_hosted.h \
- /usr/include/c++/15/bits/stringfwd.h \
- /usr/include/c++/15/bits/memoryfwd.h \
+ /usr/include/c++/15/string /usr/include/c++/15/bits/stringfwd.h \
  /usr/include/c++/15/bits/char_traits.h \
  /usr/include/c++/15/bits/postypes.h /usr/include/c++/15/cwchar \
  /usr/include/wchar.h /usr/include/aarch64-linux-gnu/bits/floatn.h \
  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
- /usr/lib/gcc/aarch64-linux-gnu/15/include/stddef.h \
  /usr/lib/gcc/aarch64-linux-gnu/15/include/stdarg.h \
  /usr/include/aarch64-linux-gnu/bits/types/wint_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h \
@@ -40,23 +86,6 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/c++/15/type_traits /usr/include/c++/15/bits/version.h \
- /usr/include/c++/15/compare /usr/include/c++/15/concepts \
- /usr/include/c++/15/bits/stl_construct.h /usr/include/c++/15/new \
- /usr/include/c++/15/bits/exception.h /usr/include/c++/15/bits/move.h \
- /usr/include/c++/15/bits/stl_iterator_base_types.h \
- /usr/include/c++/15/bits/iterator_concepts.h \
- /usr/include/c++/15/bits/ptr_traits.h \
- /usr/include/c++/15/bits/ranges_cmp.h \
- /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/15/bits/concept_check.h \
- /usr/include/c++/15/debug/assertions.h \
- /usr/include/c++/15/bits/allocator.h \
- /usr/include/aarch64-linux-gnu/c++/15/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h \
- /usr/include/c++/15/bits/functexcept.h \
- /usr/include/c++/15/bits/exception_defines.h \
- /usr/include/c++/15/bits/cpp_type_traits.h \
  /usr/include/c++/15/bits/localefwd.h \
  /usr/include/aarch64-linux-gnu/c++/15/bits/c++locale.h \
  /usr/include/c++/15/clocale /usr/include/locale.h \
@@ -66,25 +95,7 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/endianness.h \
  /usr/include/c++/15/bits/ostream_insert.h \
  /usr/include/c++/15/bits/cxxabi_forced.h \
- /usr/include/c++/15/bits/stl_iterator.h \
- /usr/include/c++/15/ext/type_traits.h \
- /usr/include/c++/15/bits/stl_function.h \
- /usr/include/c++/15/backward/binders.h \
- /usr/include/c++/15/ext/numeric_traits.h \
- /usr/include/c++/15/bits/stl_algobase.h \
- /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/utility.h \
- /usr/include/c++/15/debug/debug.h \
- /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
- /usr/include/c++/15/bits/refwrap.h /usr/include/c++/15/bits/invoke.h \
- /usr/include/c++/15/bits/range_access.h \
- /usr/include/c++/15/initializer_list \
- /usr/include/c++/15/bits/basic_string.h \
- /usr/include/c++/15/ext/alloc_traits.h \
- /usr/include/c++/15/bits/alloc_traits.h /usr/include/c++/15/string_view \
- /usr/include/c++/15/bits/functional_hash.h \
- /usr/include/c++/15/bits/hash_bytes.h \
- /usr/include/c++/15/bits/ranges_base.h \
- /usr/include/c++/15/bits/max_size_type.h /usr/include/c++/15/numbers \
+ /usr/include/c++/15/bits/basic_string.h /usr/include/c++/15/string_view \
  /usr/include/c++/15/bits/string_view.tcc \
  /usr/include/c++/15/ext/string_conversions.h /usr/include/c++/15/cstdlib \
  /usr/include/stdlib.h /usr/include/aarch64-linux-gnu/bits/waitflags.h \
@@ -123,14 +134,10 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/15/bits/charconv.h \
  /usr/include/c++/15/bits/basic_string.tcc \
- /usr/include/c++/15/bits/memory_resource.h /usr/include/c++/15/cstddef \
- /usr/include/c++/15/bits/uses_allocator.h \
- /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
- /usr/include/c++/15/bits/ranges_util.h /usr/include/c++/15/vector \
- /usr/include/c++/15/bits/stl_uninitialized.h \
- /usr/include/c++/15/bits/stl_vector.h \
- /usr/include/c++/15/bits/stl_bvector.h \
- /usr/include/c++/15/bits/vector.tcc \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/workload_runtime.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/priority_policy.hpp \
+ /home/ai-os-1/AI_OS_!/Scheduler/include/policy.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler_state.hpp \
  /home/ai-os-1/AI_OS_!/Scheduler/include/ready_queue.hpp \
@@ -140,7 +147,6 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/cxxabi_init_exception.h \
  /usr/include/c++/15/typeinfo /usr/include/c++/15/bits/nested_exception.h \
  /usr/include/c++/15/bits/enable_special_members.h \
- /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
  /usr/include/c++/15/memory /usr/include/c++/15/bits/stl_tempbuf.h \
  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
  /usr/include/c++/15/bits/align.h /usr/include/c++/15/bits/unique_ptr.h \
@@ -216,6 +222,12 @@ CMakeFiles/aios-scheduler.dir/src/main.cpp.o: \
  /usr/include/c++/15/bits/ranges_uninitialized.h \
  /usr/include/c++/15/bits/ranges_algobase.h \
  /usr/include/c++/15/pstl/glue_memory_defs.h \
- /usr/include/c++/15/pstl/execution_defs.h /usr/include/c++/15/iostream \
+ /usr/include/c++/15/pstl/execution_defs.h \
+ /usr/include/c++/15/unordered_map \
+ /usr/include/c++/15/bits/unordered_map.h \
+ /usr/include/c++/15/bits/hashtable.h \
+ /usr/include/c++/15/bits/hashtable_policy.h \
+ /usr/include/c++/15/bits/node_handle.h \
+ /usr/include/c++/15/bits/erase_if.h /usr/include/c++/15/iostream \
  /usr/include/c++/15/ostream /usr/include/c++/15/bits/ostream.tcc \
  /usr/include/c++/15/istream /usr/include/c++/15/bits/istream.tcc

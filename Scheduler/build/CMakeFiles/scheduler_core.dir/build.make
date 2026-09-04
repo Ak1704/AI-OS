@@ -142,13 +142,58 @@ CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/scheduler_state.cpp -o CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.s
 
+CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o: CMakeFiles/scheduler_core.dir/flags.make
+CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp
+CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o: CMakeFiles/scheduler_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o -MF CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o.d -o CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp
+
+CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp > CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.i
+
+CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/resource_manager.cpp -o CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.s
+
+CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o: CMakeFiles/scheduler_core.dir/flags.make
+CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp
+CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o: CMakeFiles/scheduler_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o -MF CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o.d -o CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp
+
+CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp > CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.i
+
+CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/cpu_manager.cpp -o CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.s
+
+CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o: CMakeFiles/scheduler_core.dir/flags.make
+CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp
+CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o: CMakeFiles/scheduler_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o -MF CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o.d -o CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp
+
+CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp > CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.i
+
+CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/src/linux_resource_manager.cpp -o CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.s
+
 # Object files for target scheduler_core
 scheduler_core_OBJECTS = \
 "CMakeFiles/scheduler_core.dir/src/scheduler.cpp.o" \
 "CMakeFiles/scheduler_core.dir/src/policy.cpp.o" \
 "CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.o" \
 "CMakeFiles/scheduler_core.dir/src/resource_state.cpp.o" \
-"CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.o"
+"CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.o" \
+"CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o" \
+"CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o" \
+"CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o"
 
 # External object files for target scheduler_core
 scheduler_core_EXTERNAL_OBJECTS =
@@ -158,9 +203,12 @@ libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/policy.cpp.o
 libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/ready_queue.cpp.o
 libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/resource_state.cpp.o
 libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/scheduler_state.cpp.o
+libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/resource_manager.cpp.o
+libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/cpu_manager.cpp.o
+libscheduler_core.a: CMakeFiles/scheduler_core.dir/src/linux_resource_manager.cpp.o
 libscheduler_core.a: CMakeFiles/scheduler_core.dir/build.make
 libscheduler_core.a: CMakeFiles/scheduler_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libscheduler_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libscheduler_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/scheduler_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scheduler_core.dir/link.txt --verbose=$(VERBOSE)
 

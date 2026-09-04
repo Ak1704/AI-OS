@@ -114,11 +114,56 @@ CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/tests/test_scheduler.cpp -o CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.s
 
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o: CMakeFiles/scheduler_tests.dir/flags.make
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/tests/test_resource_manager.cpp
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o: CMakeFiles/scheduler_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o -MF CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o.d -o CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/tests/test_resource_manager.cpp
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/tests/test_resource_manager.cpp > CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.i
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/tests/test_resource_manager.cpp -o CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.s
+
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o: CMakeFiles/scheduler_tests.dir/flags.make
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/tests/test_cpu_manager.cpp
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o: CMakeFiles/scheduler_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o -MF CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o.d -o CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/tests/test_cpu_manager.cpp
+
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/tests/test_cpu_manager.cpp > CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.i
+
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/tests/test_cpu_manager.cpp -o CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.s
+
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o: CMakeFiles/scheduler_tests.dir/flags.make
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o: /home/ai-os-1/AI_OS_!/Scheduler/tests/test_linux_resource_manager.cpp
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o: CMakeFiles/scheduler_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o -MF CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o.d -o CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o -c /home/ai-os-1/AI_OS_!/Scheduler/tests/test_linux_resource_manager.cpp
+
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ai-os-1/AI_OS_!/Scheduler/tests/test_linux_resource_manager.cpp > CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.i
+
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ai-os-1/AI_OS_!/Scheduler/tests/test_linux_resource_manager.cpp -o CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.s
+
 # Object files for target scheduler_tests
 scheduler_tests_OBJECTS = \
 "CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o" \
 "CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o" \
-"CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o"
+"CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o" \
+"CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o" \
+"CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o" \
+"CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o"
 
 # External object files for target scheduler_tests
 scheduler_tests_EXTERNAL_OBJECTS =
@@ -126,13 +171,16 @@ scheduler_tests_EXTERNAL_OBJECTS =
 scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o
 scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o
 scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o
+scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o
+scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o
+scheduler_tests: CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o
 scheduler_tests: CMakeFiles/scheduler_tests.dir/build.make
 scheduler_tests: CMakeFiles/scheduler_tests.dir/compiler_depend.ts
 scheduler_tests: libscheduler_core.a
 scheduler_tests: /usr/lib/aarch64-linux-gnu/libgtest_main.a
 scheduler_tests: /usr/lib/aarch64-linux-gnu/libgtest.a
 scheduler_tests: CMakeFiles/scheduler_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable scheduler_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ai-os-1/AI_OS_!/Scheduler/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable scheduler_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scheduler_tests.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -D TEST_TARGET=scheduler_tests -D TEST_EXECUTABLE=/home/ai-os-1/AI_OS_!/Scheduler/build/scheduler_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/ai-os-1/AI_OS_!/Scheduler/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=scheduler_tests_TESTS -D CTEST_FILE=/home/ai-os-1/AI_OS_!/Scheduler/build/scheduler_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-4.2/Modules/GoogleTestAddTests.cmake
 
