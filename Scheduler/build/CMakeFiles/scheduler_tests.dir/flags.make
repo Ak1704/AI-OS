@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ai-os-1/AI_OS_!/Scheduler/include
 
-CXX_FLAGS = -std=gnu++20 -DGTEST_HAS_PTHREAD=1
+CXX_FLAGS = -std=gnu++20 -fsanitize=address -fno-omit-frame-pointer -DGTEST_HAS_PTHREAD=1
 

@@ -394,6 +394,7 @@ CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o: /home/ai
   /home/ai-os-1/AI_OS_!/Scheduler/include/resource_manager.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
+  /home/ai-os-1/AI_OS_!/Scheduler/include/workload_runtime.hpp \
   /usr/include/aarch64-linux-gnu/asm/bitsperlong.h \
   /usr/include/aarch64-linux-gnu/asm/errno.h \
   /usr/include/aarch64-linux-gnu/asm/posix_types.h \
@@ -1171,6 +1172,7 @@ CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o: /home/ai-os-1/
   /home/ai-os-1/AI_OS_!/Scheduler/include/resource_manager.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
+  /home/ai-os-1/AI_OS_!/Scheduler/include/workload_runtime.hpp \
   /usr/include/aarch64-linux-gnu/asm/bitsperlong.h \
   /usr/include/aarch64-linux-gnu/asm/errno.h \
   /usr/include/aarch64-linux-gnu/asm/posix_types.h \
@@ -1948,11 +1950,13 @@ CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o: /home/ai-os-1/AI_OS_!
   /home/ai-os-1/AI_OS_!/Scheduler/include/policy.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/priority_policy.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/ready_queue.hpp \
+  /home/ai-os-1/AI_OS_!/Scheduler/include/resource_manager.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/resource_state.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/scheduler_state.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp \
   /home/ai-os-1/AI_OS_!/Scheduler/include/workload.hpp \
+  /home/ai-os-1/AI_OS_!/Scheduler/include/workload_runtime.hpp \
   /usr/include/aarch64-linux-gnu/asm/bitsperlong.h \
   /usr/include/aarch64-linux-gnu/asm/errno.h \
   /usr/include/aarch64-linux-gnu/asm/posix_types.h \
@@ -2353,6 +2357,8 @@ scheduler_tests: /lib/ld-linux-aarch64.so.1 \
   /usr/lib/aarch64-linux-gnu/libm.so \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
   /usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so \
@@ -2400,6 +2406,8 @@ CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o:
 /home/ai-os-1/AI_OS_!/Scheduler/include/ready_queue.hpp:
 
 /home/ai-os-1/AI_OS_!/Scheduler/tests/test_ready_queue.cpp:
+
+/home/ai-os-1/AI_OS_!/Scheduler/include/workload_runtime.hpp:
 
 /home/ai-os-1/AI_OS_!/Scheduler/include/scheduling_decision.hpp:
 
@@ -2486,6 +2494,8 @@ CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o:
 /usr/include/c++/15/typeinfo:
 
 /usr/include/c++/15/type_traits:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan.so:
 
 /usr/include/c++/15/tuple:
 
@@ -2604,6 +2614,8 @@ CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o:
 /usr/include/c++/15/compare:
 
 /usr/include/c++/15/bits/cxxabi_forced.h:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h:
 

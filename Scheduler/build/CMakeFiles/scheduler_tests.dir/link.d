@@ -2,6 +2,8 @@ scheduler_tests: \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o \
   /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan.so \
   CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o \
   CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o \
   CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o \
@@ -43,6 +45,10 @@ scheduler_tests: \
 /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o:
 
 /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan.so:
 
 CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o:
 
