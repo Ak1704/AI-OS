@@ -7,7 +7,7 @@
 #include <memory>
 
 
-class TestResourceManager : public ResourceManager
+class TestResourceManagerMock : public ResourceManager
 {
 public:
 
@@ -100,7 +100,7 @@ TEST(
 )
 {
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     EXPECT_THROW(
         Scheduler(
@@ -143,7 +143,7 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     Scheduler scheduler(
         std::move(policy),
@@ -180,7 +180,7 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     Scheduler scheduler(
         std::move(policy),
@@ -213,7 +213,7 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     Scheduler scheduler(
         std::move(policy),
@@ -276,7 +276,7 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     Scheduler scheduler(
         std::move(policy),
@@ -324,9 +324,9 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
-    TestResourceManager* manager_ptr =
+    TestResourceManagerMock* manager_ptr =
         resource_manager.get();
 
     Scheduler scheduler(
@@ -384,9 +384,9 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
-    TestResourceManager* manager_ptr =
+    TestResourceManagerMock* manager_ptr =
         resource_manager.get();
 
     manager_ptr->set_apply_result(false);
@@ -441,9 +441,9 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
-    TestResourceManager* manager_ptr =
+    TestResourceManagerMock* manager_ptr =
         resource_manager.get();
 
     Scheduler scheduler(
@@ -496,7 +496,7 @@ TEST(
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
-        std::make_unique<TestResourceManager>();
+        std::make_unique<TestResourceManagerMock>();
 
     Scheduler scheduler(
         std::move(policy),

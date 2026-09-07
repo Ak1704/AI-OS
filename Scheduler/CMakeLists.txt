@@ -64,6 +64,14 @@ target_link_libraries(
     scheduler_core
     GTest::gtest_main
 )
+target_compile_options(scheduler_tests PRIVATE
+    -fsanitize=address
+    -fno-omit-frame-pointer
+)
+
+target_link_options(scheduler_tests PRIVATE
+    -fsanitize=address
+)
 
 include(GoogleTest)
 
