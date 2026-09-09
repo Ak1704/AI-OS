@@ -1,19 +1,22 @@
+#include "cpu_manager.hpp"
+#include "Dispatcher/Dispatcher.h"
+#include "Dispatcher/CpuDispatcher.hpp"
 #include "linux_resource_manager.hpp"
 #include "priority_policy.hpp"
 #include "scheduler.hpp"
 
 #include <iostream>
 #include <memory>
+#include <sched.h>
 #include <unistd.h>
 
-int main()
-{
+int main() {
     auto policy =
         std::make_unique<PriorityPolicy>();
 
     auto resource_manager =
         std::make_unique<LinuxResourceManager>(4);
-    
+
     Scheduler scheduler(
         std::move(policy),
         std::move(resource_manager),
@@ -21,81 +24,90 @@ int main()
         8192
     );
 
-    scheduler.submit({
+    WorkloadDescriptor workload{
         1,
-        "Training",
-        WorkloadType::TRAINING,
-        8,
-        2,
-        4096,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        2,
-        "Inference",
+        "example_inference",
         WorkloadType::INFERENCE,
         10,
         1,
-        2048,
-        WorkloadState::READY
-    });
-
-    scheduler.submit({
-        3,
-        "DataLoader",
-        WorkloadType::DATA_LOADING,
-        5,
-        1,
         1024,
         WorkloadState::READY
-    });
+    };
 
-    auto decision =
+    WorkloadRuntime runtime{
+        workload.id,
+        static_cast<int>(getpid())
+    };
+
+    scheduler.register_runtime(
+        runtime
+    );
+
+    scheduler.submit(
+        workload
+    );
+
+    SchedulingDecision decision =
         scheduler.schedule();
 
     std::cout
-        << "Selected workload: "
+        << "Workload: "
         << decision.workload_id
         << '\n';
 
     std::cout
-        << "Action: ";
-
-    if (decision.action ==
-        SchedulingAction::RUN)
-    {
-        std::cout << "RUN\n";
-    }
-    else
-    {
-        std::cout << "WAIT\n";
-    }
-
-    std::cout
-        << "CPU cores: ";
-
-    for (int cpu :
-         decision.cpu_cores)
-    {
-        std::cout << cpu << ' ';
-    }
-
-    std::cout << '\n';
-
-    std::cout
-        << "Available CPU cores: "
-        << scheduler.state()
-               .resources()
-               .available_cpu_cores()
+        << "Action: "
+        << (
+            decision.action ==
+            SchedulingAction::RUN
+                ? "RUN"
+                : "WAIT"
+        )
         << '\n';
 
     std::cout
-        << "Available memory: "
-        << scheduler.state()
-               .resources()
-               .available_memory_mb()
-        << " MB\n";
+        << "Reason: "
+        << decision.reason
+        << '\n';
+
+    /*
+     * Phase 4 / Step 5 demonstration.
+     *
+     * Use the current process as the ProcessHandle
+     * so that we don't create a new process yet.
+     */
+    if (decision.action ==
+        SchedulingAction::RUN) {
+
+        CpuManager cpuManager(4);
+
+        aios::CpuDispatcher dispatcher(
+            cpuManager
+        );
+
+        aios::ProcessHandle process(
+            workload.id,
+            static_cast<std::int64_t>(
+                getpid()
+            )
+        );
+
+        process.setAssignedCpus(
+            decision.cpu_cores
+        );
+
+        if (dispatcher.start(process)) {
+            std::cout
+                << "Dispatcher: START succeeded\n";
+
+            std::cout
+                << "Process state: RUNNING\n";
+        }
+        else {
+            std::cout
+                << "Dispatcher: START failed\n";
+        }
+    }
 
     return 0;
 }

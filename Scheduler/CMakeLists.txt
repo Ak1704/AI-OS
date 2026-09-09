@@ -17,6 +17,9 @@ add_library(scheduler_core
     src/resource_manager.cpp
     src/cpu_manager.cpp
     src/linux_resource_manager.cpp
+    src/Dispatcher/Dispatcher.cpp
+    src/Dispatcher/ProcessHandle.cpp
+    src/Dispatcher/CpuDispatcher.cpp
 )
 
 target_include_directories(
@@ -36,6 +39,9 @@ add_executable(
     src/resource_manager.cpp
     src/cpu_manager.cpp
     src/linux_resource_manager.cpp
+    src/Dispatcher/Dispatcher.cpp
+    src/Dispatcher/ProcessHandle.cpp
+    src/Dispatcher/CpuDispatcher.cpp
 )
 
 target_link_libraries(
@@ -48,6 +54,7 @@ enable_testing()
 
 find_package(GTest REQUIRED)
 
+
 add_executable(
     scheduler_tests
     tests/test_ready_queue.cpp
@@ -56,13 +63,18 @@ add_executable(
     tests/test_resource_manager.cpp
     tests/test_cpu_manager.cpp
     tests/test_linux_resource_manager.cpp
+    tests/DispatcherTest.cpp
+    tests/ProcessHandleTest.cpp
+    tests/tes_dispatcher.cpp
 )
 
 target_link_libraries(
     scheduler_tests
     PRIVATE
     scheduler_core
+    GTest::gtest
     GTest::gtest_main
+    pthread
 )
 target_compile_options(scheduler_tests PRIVATE
     -fsanitize=address

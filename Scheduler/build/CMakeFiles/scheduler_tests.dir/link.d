@@ -1,0 +1,136 @@
+scheduler_tests: \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libasan.so \
+  CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/DispatcherTest.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/ProcessHandleTest.cpp.o \
+  CMakeFiles/scheduler_tests.dir/tests/tes_dispatcher.cpp.o \
+  libscheduler_core.a \
+  /usr/lib/aarch64-linux-gnu/libgtest.a \
+  /usr/lib/aarch64-linux-gnu/libgtest_main.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libpthread.a \
+  /usr/lib/aarch64-linux-gnu/libgtest.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so \
+  /usr/lib/aarch64-linux-gnu/libm.so.6 \
+  /usr/lib/aarch64-linux-gnu/libmvec.so.1 \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libgcc_s.so.1 \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so \
+  /usr/lib/aarch64-linux-gnu/libc.so.6 \
+  /usr/lib/aarch64-linux-gnu/libc_nonshared.a \
+  /lib/ld-linux-aarch64.so.1 \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libgcc_s.so.1 \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a \
+  /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o \
+  /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan_preinit.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libasan.so:
+
+CMakeFiles/scheduler_tests.dir/tests/test_ready_queue.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_state.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_scheduler.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_resource_manager.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_cpu_manager.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/test_linux_resource_manager.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/DispatcherTest.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/ProcessHandleTest.cpp.o:
+
+CMakeFiles/scheduler_tests.dir/tests/tes_dispatcher.cpp.o:
+
+libscheduler_core.a:
+
+/usr/lib/aarch64-linux-gnu/libgtest.a:
+
+/usr/lib/aarch64-linux-gnu/libgtest_main.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libpthread.a:
+
+/usr/lib/aarch64-linux-gnu/libgtest.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libstdc++.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libm.so:
+
+/usr/lib/aarch64-linux-gnu/libm.so.6:
+
+/usr/lib/aarch64-linux-gnu/libmvec.so.1:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libgcc_s.so.1:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libc.so:
+
+/usr/lib/aarch64-linux-gnu/libc.so.6:
+
+/usr/lib/aarch64-linux-gnu/libc_nonshared.a:
+
+/lib/ld-linux-aarch64.so.1:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc_s.so:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/libgcc_s.so.1:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/libgcc.a:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o:
+
+/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o:
